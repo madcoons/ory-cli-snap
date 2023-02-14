@@ -1,0 +1,21 @@
+name: ory
+summary: This is ory cli
+description: |
+      This is ory cli.
+adopt-info: ory
+grade: stable
+base: core
+architectures:
+  - build-on: [amd64]
+
+confinement: strict
+
+apps:
+  ory:
+    command: bin/ory
+    plugs:
+      - home
+parts:
+  ory:
+    plugin: dump
+    source: https://github.com/ory/cli/releases/download/v0.2.2/ory_0.2.2-linux_64bit.tar.gz
